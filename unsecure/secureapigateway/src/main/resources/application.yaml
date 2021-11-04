@@ -1,0 +1,25 @@
+spring:
+  cloud:
+      routes:
+        - id: cucustomerslist
+          uri: http://localhost:8282
+          predicates:
+            - Path=/customerslist/**
+        - id: customerdetail
+          uri: http://localhost:8282
+          predicates:
+            - Path=/customerdetail/**
+        - id: product
+          uri: http://localhost:8383
+          predicates:
+            - Path=/product/**
+        - id: productlist
+          uri: http://localhost:8383
+          predicates:
+            - Path=/productlist/**
+        - id: manageproduct
+          uri: http://localhost:8383
+          predicates:
+            - Path=/manageproduct/**                  
+server:
+  port: 80
